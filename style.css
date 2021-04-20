@@ -38,6 +38,6 @@ body {
 }
 
 .separation {
-    border: 10px solid #0d6efd;
+    border: 10px solid red;
     border-radius: 5px;
 }
