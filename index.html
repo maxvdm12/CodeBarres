@@ -36,7 +36,16 @@
         <div class="inOut">
             <h2 class="titreInOut">Introduction</h2>
             <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                Dans le cadre de notre master en Business Analyst, il nous est demandé d'étudier une technologie afin de comprendre les divers aspects tels que son architecture, son implémentation, les technologies impliquées, les aspects légaux ainsi que son contexte historique. Le travail consiste à vulgariser ces informations pour que quiconque puisse comprendre cette technologie même des personnes novices en la matière. 
+            </p>
+            <p>
+                Nous avons décidé de se tourner vers la technologie du code barre. Cette technologie qui n'était destiné qu'au départ aux magasins de détails et de sa chaine logistique a bouleversé un nombre incroyable de secteurs. Avez-vous une idée comment cette technologie a pu survivre au cours des années et s'étendre sur d'autres marchés ? Pourquoi s'est-il diversifié et pour quelles raisons ? 
+            </p>
+            <p>
+                Découvrons ensemble comment cette technologie a vue le jour et pourquoi est-elle toujours aussi populaire !
+            </p>
+            <p>
+                L'illustration sur la gauche est le fil rouge de notre travail. Il montre que toutes les technologies du code-barres sont encore utilisées aujourd’hui car elles ont toutes des avanatages et inconvénients. Finalement, n'hésitez pas à cliquer sur les différents boutons présents dans ce travail pour le découvrir totalement.
             </p>
         </div>
 
@@ -45,10 +54,8 @@
                     <img src="./images/tapis1.png" class="tapis">
                 </div>
                 <div class="col-8">
+                    <hr class="separation">
                     <h2>Contexte</h2>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20%</div>
-                    </div>
                     <h3>Les problématiques</h3>
                     
                     <p>
@@ -104,10 +111,8 @@
                     <img src="./images/iphone.png" class="tapis">
                 </div>
                 <div class="col-8">
+                    <hr class="separation">
                     <h2>Code-barres 1D</h2>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">40%</div>
-                    </div>
 
                     <p>
                         Le code barre 1D est l’un des tout premiers codes barre a avoir été sur le marché. Ils sont représentés par une série de lignes parallèles dont l’épaisseur varie en fonction de l’information a interprété. Le code barre cache en réalité un code binaire. Les barres noires représentent le "1" tandis que les espaces ou barres blanches représentent le "0".
@@ -313,10 +318,8 @@
                     <img src="./images/2d.png" class="tapis">
                 </div>
                 <div class="col-8">
+                    <hr class="separation">
                     <h2>Code-barres 2D</h2>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60%</div>
-                      </div>
                     <h3>Utilisation</h3>
                     <p>
                         Ces usages sont multiples, on le retrouve par exemple dans :  
@@ -456,13 +459,11 @@
         <div class="container top-buffer">
             <div class="row">
                 <div class="col-4">
-                    <img src="./images/base.png" class="tapis">
+                    <img src="./images/rfid.png" class="tapis">
                 </div>
                 <div class="col-8">
+                    <hr class="separation">
                     <h2>RFID</h2>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
-                    </div>
 
                     <h3>Qu’est ce que le RFID ?</h3>
                     <p>
@@ -545,6 +546,16 @@
                             <li>Les étiquettes en <u>lecture seule</u> : l'étiquette est programmée afin d'empécher de modifier son contenu.</li>
                             <li>Les étiquettes en <u>lecture et écriture</u> : les données de l'étiquette peuvent être lues et modifiées.</li>
                         </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/fin.png" class="tapis">
+                </div>
+                <div class="col-8">
                     <p>
                         Il existe aussi plusieurs types de technologies RFID dépendant des fréquences utilisées.
                     </p>
@@ -612,25 +623,65 @@
                         <p>
                             Différents modes sont possibles sur un smartphone équipé du NFC. Le mode émulation de carte(envoi de données), le mode lecteur(réception de donnée ) et le mode pair-à-pair(partage de données).
                         </p>
-                        <h3>Moyens de lectures</h3>
+                        <h3>Lecture des étiquettes RFID passive</h3>
                         <p>
-                            Il y a d'abord le lecture RFID. Ce lecteur est composé d'un émeteur et d'un récepteur. <br>
-                            L'émeteur va dans un premier temps transmettre aux étiquettes passives l'énergie nécessaire à l'activation des puces électroniques. 
-                            <p>Comment il fait la connexion</p>
-                            <p>Comment il fait il capte l'énergie</p>
+                            Ce lecteur est composé d'un émeteur et d'un récepteur. L'émeteur va dans un premier temps transmettre aux étiquettes passives l'énergie nécessaire à l'activation des puces électroniques ainsi que la requette. Le transfert d'énergie se fait par ondes électromagnétiques lorsque le lecteur veut intéroger une étiquette. 
                         </p>
+                        <p>
+                            L'étiquette va abosorber une partie de l'onde pour s'alimenter et utiliser la partie restante pour répondre à la requette. C'est le principe de rétromodulation.
+                        </p>
+                        <p>
+                            Le lecteur va réceptionner cette onde grâce à son récepteur et va pouvoir l'interpreter grâce à une partie logicielle.
+                        </p>
+                        <img src="./images/lectureRFID.png" width="100%" class="center">
                 </div>
             </div>
         </div>
 
         <div class="inOut">
+            <hr class="separation">
             <h1 class="titreInOut">Conclusion</h1>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-            </div>
             <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
             </p>
+        </div>
+        <div class="inOut">
+            <hr class="separation">
+            <h1 class="titreInOut">Sources</h1>
+
+            <h2>Général</h2>
+            <ul>
+                <li>Générateur de codes barres en ligne. (s. d.). Générateur de code-barres. https://barcode.tec-it.com/fr</li>
+                <li>GS1 - Calcul de clé de contrôle. (s. d.). GS1. https://www.gs1.fr/Nos-services/Les-Services-Essentiels/Calcul-de-cle-de-controle</li>
+                <li>How to calculate a check digit manually - Services | GS1. (s. d.). How to Calculate a Check Digit Manually | GS1. https://www.gs1.org/services/how-calculate-check-digit-manually</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <h2>RFID</h2>
+            <ul>
+                <li></li>
+            </ul>
+
+            <h2>Histoire 1D/2D</h2>
+            <ul>
+                <li></li>
+            </ul>
+
+            <h2>QR Code</h2>
+            <ul>
+                <li></li>
+            </ul>
+
+            <h2>Lecteur 1D</h2>
+            <ul>
+                <li></li>
+            </ul>
+
+
         </div>
                     
     </div>
