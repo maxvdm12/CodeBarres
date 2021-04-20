@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture des code-barres</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="outer">
+        <nav class="navbar navbar-dark bg-dark ">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-brand mb-0 h1">Architecture des code-barres</span>
+            </div>
+        </nav>
+
+        <div id="progress-bar"></div>
+
+        <script>
+            var bar = document.getElementById('progress-bar');
+
+            window.onscroll = function (e) {
+                var vheight = document.body.offsetHeight - window.innerHeight;
+                var barWidth = (window.pageYOffset * 100 / vheight)
+                bar.style.width = barWidth + '%'
+                //bar.innerHTML = Math.trunc(barWidth) + '%';
+            }
+        </script>
+
+
+        <div class="container">
+            
+        <div class="inOut">
+            <h2 class="titreInOut">Introduction</h2>
+            <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+        </div>
+
+            <div class="row top-buffer">
+                <div class="col-4">
+                    <img src="./images/tapis1.png" class="tapis">
+                </div>
+                <div class="col-8">
+                    <h2>Contexte</h2>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 20%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">20%</div>
+                    </div>
+                    <h3>Les problématiques</h3>
+                    
+                    <p>
+                        Le besoin d’identifier les objets plus était nécessaire pour de nombreux secteurs. Les magasins devenaient des supermarchés, les trains devenaient de plus en plus présents sur les voies et nécessitaient d’être identifiés, …
+                    </p>
+
+                    <h3>Les premiers essais</h3>
+
+                    <p>
+                        Le premier pas vers les codes-barres était en 1948. Deux jeune diplômé américain, Bernard Silver et Joseph Woodland, ont inventés des motifs avec une encre qui s’illuminait au contact d’une lumière ultraviolette.
+                    </p>
+
+                    <p>
+                        Cette première idée tombe à l’eau due à des problèmes majeurs mais ils décident de continuer leur effort et pose un brevet sur un nouveau code barre : un code barre concentrique qui pourrait être lu dans tous les sens.  A nouveau, l’idée est bonne mais le matériel est bien trop couteux pour pouvoir être utiliser partout.
+                    </p>
+
+                    <h3>Les prémices du code-barres</h3>
+
+                    <p>
+                        C’est finalement David J. Collins qui trouve une solution au problème d’identification ferroviaire. Il utilisait des bandes de couleurs orange et bleus réfléchissant la lumière. Le lecteur envoyait un laser et interprétait cette réflexion.  Cela marchait tellement bien que le secteur ferroviaire a adopté cette technologie avec l’aide du plan « Sylvania ». En 1967, on atteint la standardisation de cette technologie dans ce secteur.
+                    </p>
+
+                      <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Sources
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Exemple de 1D</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+  
+                </div>
+            </div>
+        </div>
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/iphone.png" class="tapis">
+                </div>
+                <div class="col-8">
+                    <h2>Code-barres 1D</h2>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">40%</div>
+                    </div>
+
+                    <p>
+                        Le code barre 1D est l’un des tout premiers codes barre a avoir été sur le marché. Ils sont représentés par une série de lignes parallèles dont l’épaisseur varie en fonction de l’information a interprété. Le code barre cache en réalité un code binaire. Les barres noires représentent le "1" tandis que les espaces ou barres blanches représentent le "0".
+                    </p>
+
+                    <p>Nous prendrons la norme EAN-13 pour vous expliquer comment cette technologie fonctionne. </p>
+
+                    <p>
+                        Le code barre EAN-13 est utilisé dans le monde entier dans les produits de grandes consommations. Ce code barre est utilisé pour identifier un produit du fabricant jusqu'au consommateur. Ce code Ean-13 est utilisé pour les produits alimentaires et non-alimentaire (secteur du commerce et industrie).
+                    </p>
+
+                    <h3>Comment fonctionne le code EAN-13 ? </h3>
+                    <p>
+                        Le code EAN-13 est codé sur 13 chiffres comme son nom l'indique. Sur ces 13 chiffres, seul 10 sont utilisables dont 5 pour l'article.  Les autres chiffres sont réservés à des utilisations spécifiques. Cliquez sur les différents boutons pour en découvrir d'avantages. 
+                    </p>
+
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col" colspan="2">
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#drapeau">
+                                        Drapeau
+                                    </button>
+                            </th>
+                            <th scope="col" colspan="5">
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#fabricant">
+                                    Codage du fabricant
+                                </button>
+                            </th>
+                            <th scope="col" colspan="5">
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#article">
+                                    Codage de l'article
+                                </button>
+                            </th>
+                            <th scope="col">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#controle">
+                                    Caractère de controle
+                                </button>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="table-danger">1</td>
+                            <td class="table-danger">2</td>
+                            <td class="table-success">3</td>
+                            <td class="table-success">4</td>
+                            <td class="table-success">5</td>
+                            <td class="table-success">6</td>
+                            <td class="table-success">7</td>
+                            <td class="table-info">8</td>
+                            <td class="table-info">9</td>
+                            <td class="table-info">10</td>
+                            <td class="table-info">11</td>
+                            <td class="table-info">12</td>
+                            <td class="table-warning">13</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    
+
+
+
+
+                
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="drapeau" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Le drapeau</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Les deux premiers chiffres correspondent au code pays qui parfois peut prendre 3 chiffres au détriment d'un chiffre fabricant. 
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="fabricant" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Le fabricant</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Ces 5 chiffres sont utilisés pour identifier le fabricant. Ce code est émis par un service allemand nommé GEPIR. C'est une base de données regroupant tous les codes des fabricants.
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="article" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Le code article</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Ce sont les chiffres qui identifie le produit vendu par un fabricant. Contrairement au code fabricant, le code produit est attribué directement par le fabricant.
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="controle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Le caractère de contrôle</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <p>
+                                Le caractère de contrôle vérifie donc la validité du code. Il est généré selon un algorithme normalisé. L'algorithme est très simple à comprendre, voici un exemple. 
+                            </p>
+                            <img src="./images/1d3.png" class="center">
+                            <p>
+                                Voyons maintenant comment transformer ce chiffre en code barre EAN.
+                            </p>
+                            <img src="./images/1d2.png" class="center" width="80%">
+                            
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <p><strong>Symbologies : Transformons notre code EAN en symbole </strong> </p>
+                    <p>
+                        Voici à quoi devrait ressembler notre code barre EAN. On sait déjà que les barres dans le code représentent les chiffres binaires. Même si on aperçoit des barres plus épaisses, c'est simplement la succession de plusieurs bit 1.
+                    </p>
+                    <p>
+                        Les règles pour construire ce code EAN sont simples : 
+                        <ul>
+                            <li>Chaque caractère sera codé sur 7 bits. </li>
+                            <li>Chaque bit (0 ou 1) sera visible par la présence d'une barre blanche (0) ou la présence d'une barre noire (1).</li>
+                            <li>L'ensemble des 7 bits est divisé en 4 zones : 2 zones blanches puis 2 zones noires.</li>
+                        </ul>
+                        Pour respecter cette troisième règle, il a fallu inventer trois "jeu de code" particulier : A, B et C. 
+                    </p>
+                    <img src="./images/1d4.png" class="center" width="60%">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/2d2.png" class="tapis">
+                </div>
+                <div class="col-8">
+                    <p>
+                        Chaque caractère du jeu A et B commence par 0 et finit par 1 et inversement pour le jeu C. La dernière règle est que les sets A et B ne s'utilisent que du côté gauche du code barre et le set C à droite. Ces contraintes existent pour pouvoir lire le code barre dans les deux sens : de gauche à droite et vice versa.
+                    </p>
+                    <img src="./images/1d5.png" class="center" width="30%">
+                    <p>
+                        Voici à quoi correspond le chiffre 4 en barre binaire. Nous constatons également qu'il y a trois barres plus longues que les autres et sans chiffres. Ces barres sont des barres de contrôle et de garde.
+                    </p>
+                    <p><strong>Les zones de contrôle et barre de garde</strong></p>
+                    <img src="./images/1d6.png" class="center" width="40%">
+                    <p>
+                        Les zones de contrôles sont les barres aux extrémités. Ils permettent au lecteur de savoir où commence et termine le code barre. Mais pour l'instant, il ne sait pas si le code est à l'endroit ou à l'envers. C'est là qu'intervient la barre de garde. Il divise le code barre en deux parties. <br>
+                        Les chiffres de la partie gauche sont écrits de manière inverse (bit 1 devient bit 0 et bit 0 devient 1) par rapport au chiffre de la partie droite. 
+                    </p>
+                    <img src="./images/1d7.png" class="center" width="30%">
+                    <p>
+                        Cet effet miroir permet de lire le code à l'endroit et à l'envers pour les jeux B et C puisque les jeux B et C sont symétriques. Si on lit le code à l'envers, le chiffre du jeu B devient un chiffre du jeu C et inversement. Seul le jeu A n'a pas de symétrie et permet au système de comprendre dans quel sens il doit lire le code.  
+                    </p>
+                    <p>
+                        Cela oblige le code barre d'avoir au moins un chiffre du jeu A. Le deuxième chiffre sera toujours un élément du jeu A. 
+                    </p>
+                    <p>
+                        Il reste un dernier élément, il y a un chiffre au début du code EAN qui n'est pas retranscrit dans le code barre. Ce numéro permet d'identifier la structure des jeux du code. 
+                    </p>
+                    <img src="./images/1d8.png" class="center" width="30%">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/2d.png" class="tapis">
+                </div>
+                <div class="col-8">
+                    <h2>Code-barres 2D</h2>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">60%</div>
+                      </div>
+                    <h3>Utilisation</h3>
+                    <p>
+                        Ces usages sont multiples, on le retrouve par exemple dans :  
+                        <ul>
+                            <li>
+                                <strong>La livraison de colis: </strong>
+                                les livreurs peuvent scanner le qr code pour obtenir des informations sur le colis ou valider la livraison. 
+                            </li>
+                            <li>
+                                <strong>Les sites internet :</strong>
+                                les sites internet peuvent s’équiper de QR code pour rediriger les internautes, offrir une promotion...
+                            </li>
+                            <li>
+                                <strong>La publicité : </strong>
+                                au début des QR code, qui n’a pas vu une affiche avec simplement un QR code pour attirer la curiosité des passants ? Aujourd’hui il s’utilise de plus en plus souvent dans la publicité off-/on-line. 
+                            </li>
+                            <li>
+                                <strong>En entreprise :</strong>
+                                il permet notamment de faire des actions simple au lui de passer par des manipulations. Par exemple, un visiteur peut se connecter au wifi d’une entreprise simplement en scannant un QR code. On peut également payer, afficher un texte, un lien, etc. 
+                            </li>
+                        </ul>
+                        Ce sont ici quelques exemples mais l’utilisation est bien plus vaste. 
+                    </p>
+
+                    <h3>Fonctionnement</h3>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Les modules
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Le code QR est constitué de points noires disposés dans un carré à fond blanc. Ces petits points noirs sont appelés des modules. La disposition de ces modules définit les données. Certaines modules sont de tailles différentes et prédéfinis dans chaque code QR Certaines sont par exemple réservés pour des fonctions bien précises.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Les motifs de détections 
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>
+                                Pour lire le qr code, le lecteur a besoin de trois informations essentielles : les motifs de détection de position. Ils sont aux nombres de trois pour le QR code. 
+                              </p>
+
+                              <img src="./images/2d/1.png" class="center" width="60%">  
+
+
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              L'alignement
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    Grâce à ses motifs de détection de position, on peut lire le qr code dans n’importe quel sens ! Ce qui permet d’augmenter la rapidité de lecture du code. Si la position de lecteur est A, B ou C, nous obtenons toujours le même résultat.  
+                                  </p>
+    
+                                  <img src="./images/2d/2.png" class="center" width="60%">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="heading4">
+                                Le schéma de temps
+                              </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                  <p>
+                                    Les modules blancs et noires se succèdent l’un à la suite de l’autre pour déterminer la cadence.  
+                                </p>
+      
+                                    <img src="./images/2d/3.png" class="center" width="60%">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="heading5">
+                            La correction d’erreur et disposition des informations
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                Ces bandes permettent de savoir le taux de correction d’erreur possible ainsi que le modèle de disposition des informations.  
+                                </p>
+                                <img src="./images/2d/4.png" class="center" width="60%">
+                                <p>
+                                    Le taux d’erreur que le qr code peut gérer diffère selon la méthode et le modèle utilisée. Attention, si ce sont les modules de position qui sont endommagés, la possibilité de reconstruction du code n’est pas assuré.  
+                                </p>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="heading6">
+                                La méthode de Reed-Solomon
+                                </button>
+                            </h2>
+                            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>
+                                    Cette méthode permet de « restaurer » les données endommages ou illisible par le lecteur. Le taux de restauration dépend du niveau d’erreur.  
+                                    </p>
+                                    <img src="./images/2d/5.png" class="center" width="60%">
+                                    <p>
+                                        Le code est mis d’une certaine manière pour pouvoir corriger ces erreurs. Nous ne rentrerons pas dans les détails mathématiques de ce procédé  
+                                    </p>
+                                    <img src="./images/2d/7.png" class="center" width="60%">
+
+                                </div>
+                            </div>
+                        </div>
+
+                      </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./images/base.png" class="tapis">
+                </div>
+                <div class="col-8">
+                    <h2>RFID</h2>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+
+                    <h3>Qu’est ce que le RFID ?</h3>
+                    <p>
+                        Le RFID ou Radio Freqency Identification est une technologie d’identification et de transfert de données. Elle prend la forme d’une puce informatique et est placé dans un objet comme des carte de banque, des clés de voiture ou des étiquettes anti-vols en magasin. <br> 
+                        Cette étiquette radio est dans la continuité des codes-barres car elle permet d’identifier des objets et ainsi interagir avec eux.<br>
+                    </p>
+                    <p>
+                        Un système RFID entier est composé: 
+                        <ul>
+                            <li>d'une <u>étiquette</u> électronique placé sur l'objet;</li>
+                            <li>d'un <u>lecteur</u> permetant de communiquer avec l'étiquette; Et </li>
+                            <li>d'une <u>partie logicielle</u> qui est chargée d'interpreter les données.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Le RFID et le code-barres 2D sont en concurrence pour une utilisation industrielle et privée car ces deux technologies sont 2 concepts différents avec un objectif commun. Ces deux concepts diffétents proposent des avantages et des inconvénients. 
+                    </p>
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col" >Technologie</th>
+                            <th scope="col" class="table-success">Avantages</th>
+                            <th scope="col" class="table-danger">Inconvénients</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Code-barrres 2D(QRCode)</th>
+                            <td class="table-success">
+                                <ul>
+                                    <li>Facilité de lecture par tous les smartphones</li>
+                                    <li>Résistance (il suffit de 30% du QR-Code pour le lire)</li>
+                                    <li>Prix à l'unité</li>
+                                </ul>
+                            </td>
+                            <td class="table-danger">
+                                <ul>
+                                    <li>Le code-barres est visible</li>
+                                    <li>Quantité de données limitée</li>
+                                    <li>Besoin d'être scanné individuellement</li>
+                                </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RFID</th>
+                            <td class="table-success">
+                                <ul>                                
+                                    <li>Les données peuvent être modifiées</li>
+                                    <li>Scan plusieurs objets en même temps et à distance</li>
+                                    <li>Plus de fonctionnalités</li>
+                                </ul>
+                            </td>
+                            <td class="table-danger">
+                                <ul> 
+                                    <li>Prix de l'équipement</li>
+                                    <li>Sensibilité au facteurs extérieurs(humidité...)</li>
+                                </ul>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    <h3>
+                        Fonctionnement
+                    </h3>
+                    <p>
+                        La norme RFID est gérée par ISO, l’organisme international de la normalisation. Ce dernier donne des standards à respecter pour permettre à une radio-étiquette de communiquer avec un lecteur.  Ils régissent plusieurs points comme :
+                        <ul>
+                            <li>La confidentialité</li>
+                            <li>La sécurité</li>
+                            <li>Les performances</li>
+                        </ul>
+                    </p>
+
+                    <p>Les différents types d'étiquettes sont aussi formalisés.</p>
+                        <ul>
+                            <li>Les étiquettes <u>passives</u> : elles utilisent la puissance des ondes du lecteur pour fonctionner.</li>
+                            <li>Les étiquettes <u>actives</u> : elles sont dotés d'une source d'énergie et permettent d'être lues sur de longues distances. Elles sont par exemple utilisés sur un port pour gérer les contenaires.</li>
+                            <li>Les étiquettes en <u>lecture seule</u> : l'étiquette est programmée afin d'empécher de modifier son contenu.</li>
+                            <li>Les étiquettes en <u>lecture et écriture</u> : les données de l'étiquette peuvent être lues et modifiées.</li>
+                        </ul>
+                    <p>
+                        Il existe aussi plusieurs types de technologies RFID dépendant des fréquences utilisées.
+                    </p>
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Basse fréquence
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>
+                                    Les basses fréquences sont les premières qui ont été développées dans les années 1970. Ils sont principalement utilisés pour l’identification animale et dans l’utilisation du RFID dans des environnements fragiles et craintifs des ondes.
+                                    Les avantages sont la fiabilité. Ensuite cette technologie est peu sensible aux environnements métalliques.
+                                </p>
+                                <p>
+                                    Les désavantages sont d’abord la sécurité car il est possible de cloner l’étiquette assez facilement. Cette technologie n’est donc plus utilisée pour le contrôle d’accès.
+                                </p>
+                                <p>
+                                    Son fonctionnement : Une étiquette RFID approche d’un lecteur entre 1 et 30cm. Elle émet son numéro de série en boucle et est capté et décodé par le lecteur. Il est possible que de faire une lecture unitaire.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                              Haute fréquence
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>
+                                    Les hautes fréquences sont la technologie la plus utilisée aujourd’hui. Elle est utilisée par exemple dans nos smartphones, dans nos cartes bancaires ou dans l'industrie. 
+                                </p>
+                                <p>
+                                    Leur principal atout est la sécurité.<br>
+                                    Dans un permier temps, la distance de lecture est inférieur à 10cm. Elle permet donc de bien sélectionner que l'on veut scanner. <br>
+                                    Ensuite, cette fréquence permet d'implémenter une <strong>authentification mutuelle</strong> entre l'étiquette et le lecteur. Pour cela, l'étiquette est équipé de crypto-pocesseurs et d'une mémoire anti-copie. Une fois que le systhème logiciel et l'étiquette ont échangés les bonnes données d'authentification, l'étiquette peut dévoiller sa mémoire. 
+                                    
+                                </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Ultra haute fréquence
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                L'objectif des étiquettes haute fréquence est d'être peu chère afin d'être produite en masse. Le but est de remplacer les code-barres 1D car l'étiquette permet d'être lues plus facilement que le code-barre à travers des portiques RFID par exemple.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                        <h3>NFC</h3>
+                        <p>
+                            Le NFC est un nom connu dans notre language commun. On le voit par exemple sur nos téléphones. Cette technologie est un dérivé de la technologie RFID haute fréquence. Elle hérite donc de ces caractérisques comme la sécurité expliquée plus haut. Cependant, la norme NFC étant la norme RFID en ajoutant par exemple que le partage de données doit se faire à partir d'une démarche volontaire de l'utilisateur ou que le sythème doit être capable de garder un historique de l'utilisation de l'étiquette. Le NFC est conçu particulieremnt pour être utilisé par un appareil mobile.
+                        </p>
+                        <p>
+                            Différents modes sont possibles sur un smartphone équipé du NFC. Le mode émulation de carte(envoi de données), le mode lecteur(réception de donnée ) et le mode pair-à-pair(partage de données).
+                        </p>
+                        <h3>Moyens de lectures</h3>
+                        <p>
+                            Il y a d'abord le lecture RFID. Ce lecteur est composé d'un émeteur et d'un récepteur. <br>
+                            L'émeteur va dans un premier temps transmettre aux étiquettes passives l'énergie nécessaire à l'activation des puces électroniques. 
+                            <p>Comment il fait la connexion</p>
+                            <p>Comment il fait il capte l'énergie</p>
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="inOut">
+            <h1 class="titreInOut">Conclusion</h1>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+            </div>
+            <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+        </div>
+                    
+    </div>
+
+</body>
+</html>

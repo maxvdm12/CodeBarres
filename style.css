@@ -1,0 +1,39 @@
+.titreInOut
+{
+    text-align: center;
+
+}
+
+.inOut
+{
+    margin: 1em;
+}
+
+body {
+    position: relative;
+}
+
+#progress-bar {
+    background: linear-gradient(43deg, #ba00ff, #009dff);
+    height: 10px;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.tapis
+{
+    width: 20em;
+}
+
+.progress{
+    margin-bottom: 1em;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
